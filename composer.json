@@ -1,0 +1,50 @@
+{
+    "name": "devnullius/yii2-i18n-module",
+    "description": "Yii2 i18n module makes the translation of your application simple ",
+    "version": "1.0.0",
+    "type": "yii2-extension",
+    "keywords": [
+        "yii2",
+        "i18n",
+        "translation",
+        "translations"
+    ],
+    "homepage": "https://github.com/devnullius/yii2-i18n-module",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Aleksandr Zelenin",
+            "email": "aleksandr@zelenin.me",
+            "homepage": "http://zelenin.me",
+            "role": "Creator"
+        },
+        {
+            "name": "Aram H.",
+            "email": "aram.ds@gmail.com",
+            "role": "Improver"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/devnullius/yii2-i18n-module/issues",
+        "source": "https://github.com/devnullius/yii2-i18n-module"
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=7.1.0",
+        "yiisoft/yii2": "~2.0.26"
+    },
+    "autoload": {
+        "psr-4": {
+            "devnullius\\yii\\modules\\i18n\\": ""
+        }
+    },
+    "extra": {
+        "bootstrap": "devnullius\\yii\\modules\\i18n\\Bootstrap"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ]
+}
