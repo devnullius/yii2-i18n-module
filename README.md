@@ -17,7 +17,7 @@ php composer.phar require devnullius/yii2-i18n-module
 or add
 
 ```
-"devnullius/yii2-i18n-module": "~1.0"
+"devnullius/yii2-i18n-module": "^1.0"
 ```
 
 to the require section of your ```composer.json```
