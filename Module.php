@@ -10,7 +10,7 @@ class Module extends \yii\base\Module
 {
     public $pageSize = 50;
 
-    public static function t($message, $params = [], $language = null)
+    public static function t($message, $params = [], $language = null): string
     {
         return Yii::t('i18n', $message, $params, $language);
     }
@@ -18,7 +18,7 @@ class Module extends \yii\base\Module
     /**
      * @param MissingTranslationEvent $event
      */
-    public static function missingTranslation(MissingTranslationEvent $event)
+    public static function missingTranslation(MissingTranslationEvent $event): void
     {
         $driver = Yii::$app->getDb()->getDriverName();
         $caseInsensitivePrefix = $driver === 'mysql' ? 'binary' : '';
