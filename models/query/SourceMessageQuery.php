@@ -8,7 +8,7 @@ use yii\db\ActiveQuery;
 
 class SourceMessageQuery extends ActiveQuery
 {
-    public function notTranslated()
+    public function notTranslated(): SourceMessageQuery
     {
         $messageTableName = Message::tableName();
         $query = Message::find()->select($messageTableName . '.id');
@@ -27,7 +27,7 @@ class SourceMessageQuery extends ActiveQuery
         return $this;
     }
 
-    public function translated()
+    public function translated(): SourceMessageQuery
     {
         $messageTableName = Message::tableName();
         $query = Message::find()->select($messageTableName . '.id');
