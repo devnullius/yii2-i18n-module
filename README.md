@@ -1,4 +1,4 @@
-# Yii2 I18N module
+# Yii2 i18n module
 
 [Yii2](http://www.yiiframework.com) i18n (internalization) module makes the translation of your application so simple
 
@@ -11,13 +11,13 @@ The preferred way to install this extension is through [Composer](http://getcomp
 Either run
 
 ```
-php composer.phar require zelenin/yii2-i18n-module "dev-master"
+php composer.phar require devnullius/yii2-i18n-module
 ```
 
 or add
 
 ```
-"zelenin/yii2-i18n-module": "dev-master"
+"devnullius/yii2-i18n-module": "~1.0"
 ```
 
 to the require section of your ```composer.json```
@@ -44,7 +44,7 @@ Configure I18N component in backend config:
 Run:
 
 ```
-php yii migrate --migrationPath=@Zelenin/yii/modules/I18n/migrations
+php yii migrate --migrationPath=@devnullius/yii/modules/i18n/migrations
 ```
 
 Go to ```http://backend.yourdomain.com/translations``` for translating your messages
@@ -66,10 +66,10 @@ where ```@common/messages``` is path for app translations
 Run:
 
 ```
-php yii i18n/export @Zelenin/yii/modules/I18n/messages i18n
+php yii i18n/export @devnullius/yii/modules/i18n/messages i18n
 ```
 
-where ```@Zelenin/yii/modules/I18n/messages``` is path for app translations and ```i18n``` is translations category in DB
+where ```@devnullius/yii/modules/i18n/messages``` is path for app translations and ```i18n``` is translations category in DB
 
 ### Using ```yii``` category with DB
 
@@ -102,3 +102,7 @@ See [Yii2 i18n guide](https://github.com/yiisoft/yii2/blob/master/docs/guide/tut
 ## Author
 
 [Aleksandr Zelenin](https://github.com/zelenin/), e-mail: [aleksandr@zelenin.me](mailto:aleksandr@zelenin.me)
+
+## Improver
+
+[Aram Harutyunyan](https://github.com/aramds/), e-mail: [aram.ds@gmail.com](mailto:aram.ds@gmail.com)
