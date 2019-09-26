@@ -23,7 +23,7 @@ class SourceMessageQuery extends ActiveQuery
             $i++;
         }
         $ids = $query->indexBy('id')->all();
-        $this->andWhere(['not in', $messageTableName . 'id', array_keys($ids)]);
+        $this->andWhere(['not in', $messageTableName . '.id', array_keys($ids)]);
         
         return $this;
     }
@@ -43,7 +43,7 @@ class SourceMessageQuery extends ActiveQuery
             $i++;
         }
         $ids = $query->indexBy('id')->all();
-        $this->andWhere(['in', $messageTableName . 'id', array_keys($ids)]);
+        $this->andWhere(['in', $messageTableName . '.id', array_keys($ids)]);
         
         return $this;
     }
