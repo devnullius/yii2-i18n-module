@@ -117,6 +117,9 @@ class SourceMessage extends ActiveRecord
     {
         /** @var Message $message */
         foreach ($this->messages as $message) {
+            if (empty($message->translation)) {
+                $message->translation = null;
+            }
             $this->link('messages', $message);
             $message->save();
         }

@@ -17,16 +17,17 @@ class SourceMessageQuery extends ActiveQuery
             if ($i === 0) {
                 $query->andWhere($messageTableName . '.language = :language and ' . $messageTableName . '.translation is not null', [':language' => $language]);
             } else {
-                $query->innerJoin($messageTableName . ' t' . $i, 't' . $i . '.id = ' . $messageTableName . '.id and t' . $i . '.language = :language and t' . $i . '.translation is not null', [':language' => $language]);
+                $query->innerJoin($messageTableName . ' t' . $i, 't' . $i . '.id = ' . $messageTableName . '.id and t' . $i . '.language = :language and t' . $i . '.translation is not null',
+                    [':language' => $language]);
             }
             $i++;
         }
         $ids = $query->indexBy('id')->all();
-        $this->andWhere(['not in', 'id', array_keys($ids)]);
-
+        $this->andWhere(['not in', $messageTableName . 'id', array_keys($ids)]);
+        
         return $this;
     }
-
+    
     public function translated(): SourceMessageQuery
     {
         $messageTableName = Message::tableName();
@@ -36,13 +37,14 @@ class SourceMessageQuery extends ActiveQuery
             if ($i === 0) {
                 $query->andWhere($messageTableName . '.language = :language and ' . $messageTableName . '.translation is not null', [':language' => $language]);
             } else {
-                $query->innerJoin($messageTableName . ' t' . $i, 't' . $i . '.id = ' . $messageTableName . '.id and t' . $i . '.language = :language and t' . $i . '.translation is not null', [':language' => $language]);
+                $query->innerJoin($messageTableName . ' t' . $i, 't' . $i . '.id = ' . $messageTableName . '.id and t' . $i . '.language = :language and t' . $i . '.translation is not null',
+                    [':language' => $language]);
             }
             $i++;
         }
         $ids = $query->indexBy('id')->all();
-        $this->andWhere(['in', 'id', array_keys($ids)]);
-
+        $this->andWhere(['in', $messageTableName . 'id', array_keys($ids)]);
+        
         return $this;
     }
 }
