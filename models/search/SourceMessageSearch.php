@@ -59,6 +59,9 @@ class SourceMessageSearch extends SourceMessage
                 Message::tableName() . '.translation as [[translation]]',
             ])
             ->joinWith(['messages']);
+        
+        $query->andWhere([ Message::tableName() . '.language' => \Yii::$app->language]);
+        
         $dataProvider = new ActiveDataProvider(['query' => $query]);
         
         if (!($this->load($params) && $this->validate())) {
