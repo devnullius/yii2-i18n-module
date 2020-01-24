@@ -58,7 +58,9 @@ class SourceMessageSearch extends SourceMessage
                 SourceMessage::tableName() . '.message as [[message]]',
                 Message::tableName() . '.translation as [[translation]]',
             ])
-            ->joinWith(['messages']);
+            ->joinWith(['messages'])
+            ->groupBy([SourceMessage::tableName() . '.id', Message::tableName() . '.translation'])
+            ->orderBy([SourceMessage::tableName() . '.id' => SORT_DESC]);
         
         $query->andWhere([ Message::tableName() . '.language' => \Yii::$app->language]);
         
