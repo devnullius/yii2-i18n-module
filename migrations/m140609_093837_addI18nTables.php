@@ -45,7 +45,7 @@ class m140609_093837_addI18nTables extends Migration
             'deleted' => $this->boolean()->defaultValue(false)->comment('If true row is softly deleted, only marker.'),
             'language' => $this->string()->null(),
             'translation' => $this->text()->null(),
-        ]);
+        ], $tableOptions);
         $this->addPrimaryKey('id', $messageTable, ['id', 'language']);
         $this->addForeignKey('fk_source_message_message', $messageTable, 'id', $sourceMessageTable, 'id', 'cascade', 'restrict');
     }
