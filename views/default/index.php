@@ -19,8 +19,8 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <!-- Default box -->
 <div class="translate-index">
-    <div class="box">
-        <div class="box-body">
+    <div class="box"> 
+        <div class="box-body table-responsive">
             <?= GridView::widget([
                 'id' => 'translationsGrid',
                 'filterModel' => $searchModel,
